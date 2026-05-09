@@ -611,7 +611,6 @@
     activeCat = name;
     activeSubcat = '';
     searchQuery = document.getElementById('searchInput').value;
-    document.getElementById('searchInput').focus();
     renderAll();
   }
 
@@ -624,21 +623,16 @@
 
   function toggleFAQ(el) {
     const item = el.parentElement;
-    const isOpen = item.classList.contains('open');
-    // Close all others
-    document.querySelectorAll('.faq-item.open').forEach(i => {
-      if (i !== item) i.classList.remove('open');
-    });
     item.classList.toggle('open');
-    // Scroll to reveal answer if just opened
-    if (!isOpen) {
+    // Scroll to reveal answer if just opened (only when partially hidden)
+    if (item.classList.contains('open')) {
       setTimeout(() => {
         const rect = item.getBoundingClientRect();
         const headerH = 64;
         if (rect.top < headerH) {
           window.scrollBy({ top: rect.top - headerH - 8, behavior: 'smooth' });
         }
-      }, 50);
+      }, 60);
     }
   }
 
