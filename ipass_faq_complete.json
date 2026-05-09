@@ -1,14 +1,14 @@
 {
   "categories": [
     {
-      "id": 1,
-      "name": "服務移轉相關說明",
-      "count": 14
-    },
-    {
       "id": 2,
       "name": "iPASS MONEY",
       "count": 243
+    },
+    {
+      "id": 1,
+      "name": "服務移轉相關說明",
+      "count": 14
     },
     {
       "id": 3,
