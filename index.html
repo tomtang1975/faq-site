@@ -7,6 +7,26 @@
 <style>
   /* ── Root Variables (iPASS Green Theme) ── */
   :root {
+    --bg: #f0f7f0;
+    --card: #ffffff;
+    --card-hover: #eaf5ea;
+    --text: #1a2a1a;
+    --text-secondary: #5a7a5a;
+    --accent: #10A83B;
+    --accent-hover: #0D8C32;
+    --accent-dim: #00C43F;
+    --accent-glow: rgba(16,168,59,0.08);
+    --border: #d0e0d0;
+    --tag-bg: rgba(16,168,59,0.06);
+    --tag-text: #10A83B;
+    --highlight-bg: rgba(248,193,2,0.25);
+    --highlight-text: #F8C102;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --transition: all 0.25s ease;
+  }
+  [data-theme="dark"] {
     --bg: #0a0a0f;
     --card: #16161f;
     --card-hover: #1e1e2a;
@@ -21,27 +41,7 @@
     --tag-text: #10A83B;
     --highlight-bg: rgba(248,193,2,0.25);
     --highlight-text: #F8C102;
-    --radius: 12px;
-    --radius-sm: 8px;
     --shadow: 0 4px 24px rgba(0,0,0,0.3);
-    --transition: all 0.25s ease;
-  }
-  [data-theme="light"] {
-    --bg: #f0f7f0;
-    --card: #ffffff;
-    --card-hover: #eaf5ea;
-    --text: #1a2a1a;
-    --text-secondary: #5a7a5a;
-    --accent: #10A83B;
-    --accent-hover: #0D8C32;
-    --accent-dim: #00C43F;
-    --accent-glow: rgba(16,168,59,0.08);
-    --border: #d0e0d0;
-    --tag-bg: rgba(16,168,59,0.06);
-    --tag-text: #0D8C32;
-    --highlight-bg: rgba(248,193,2,0.2);
-    --highlight-text: #b8860b;
-    --shadow: 0 4px 24px rgba(0,0,0,0.06);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -345,7 +345,7 @@
       <a href="https://www.i-pass.com.tw/" target="_blank">← iPASS 官網</a>
       <h1>常見問題 FAQ</h1>
     </div>
-    <button class="theme-toggle" onclick="toggleTheme()" title="切換主題" id="themeBtn">🌙</button>
+    <button class="theme-toggle" onclick="toggleTheme()" title="切換主題" id="themeBtn">☀️</button>
   </header>
 
   <!-- Stats -->
@@ -391,7 +391,7 @@
   // Theme
   // ══════════════════════════════════════════════
   function getTheme() {
-    return localStorage.getItem('faq-theme') || 'dark';
+    return localStorage.getItem('faq-theme') || 'light';
   }
   function setTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
